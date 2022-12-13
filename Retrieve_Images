@@ -1,0 +1,25 @@
+private List<File> getAllImageFilesFromFolder(File directory) {
+  //Get all the files from the folder
+  File[] allFiles = directory.listFiles();
+  if (allFiles == null || allFiles.length == 0) {
+    throw new RuntimeException("No files present in the directory: " + directory.getAbsolutePath());
+  }
+ 
+  //Set the required image extensions here.
+  List<String> supportedImageExtensions = Arrays.asList("jpg", "png", "gif", "webp");
+ 
+  //Filter out only image files
+  List<File> acceptedImages = new ArrayList<>();
+  for (File file : allFiles) {
+    //Parse the file extension
+    String fileExtension = file.getName().substring(file.getName().lastIndexOf(".") + 1);
+    //Check if the extension is listed in the supportedImageExtensions
+    if (supportedImageExtensions.stream().anyMatch(fileExtension::equalsIgnoreCase)) {
+      //Add the image to the filtered list
+      acceptedImages.add(file);
+    }
+  }
+ 
+  //Return the filtered images
+  return acceptedImages;
+}
