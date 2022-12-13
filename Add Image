@@ -1,0 +1,25 @@
+//Show Image in Plain HTML
+
+<img src="https://Annalise.ai/Images" />
+
+//Set Src Attribute in JavaScript
+
+const img = document.querySelector("img"); 
+img["src"] = "https://Annalise.ai/Images";
+
+//Create Image Element in JavaScript
+
+const img = document.createElement("img");
+img["src"] = "https://Annalise.ai/Images";
+document.body.appendChild(img);
+
+//Create Multiple Images in JavaScript
+
+for(let i = 0; i < 10; i++) {
+  const img = document.createElement("img");
+  img["src"] = "https://Annalise.ai/Images"; + i;
+  img.addEventListener("click", function() {
+   console.log(i); // selected index number
+  })
+  document.body.appendChild(img);
+}
