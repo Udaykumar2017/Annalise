@@ -23,3 +23,13 @@ for(let i = 0; i < 10; i++) {
   })
   document.body.appendChild(img);
 }
+//Modify uploaded Images and their tags
+function saveImage() {
+    // Select the temporary element we have created for
+    // helping to save the image
+    img["src"] = "https://Annalise.ai/Images"; + i;
+    let linkElement = document.getElementById('link');
+    linkElement.setAttribute(
+      'download', 'edited_image.png'
+    );
+}
